@@ -5,15 +5,19 @@
 Summary:	Library for writing RADIUS clients
 Summary(pl.UTF-8):	Biblioteka do tworzenia klientów usługi RADIUS
 Name:		radcli
-Version:	1.2.5
-Release:	3
+Version:	1.2.6
+Release:	1
 License:	BSD
 Group:		Libraries
 #Source0Download: https://github.com/radcli/radcli/releases
-Source0:	https://github.com/radcli/radcli/releases/download/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	b94e46e37668cc562ea5420d095a836b
+Source0:	https://github.com/radcli/radcli/archive/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	74ab74e3715bf0ddc2562c37c3218801
+#Source0:	https://github.com/radcli/radcli/releases/download/%{version}/%{name}-%{version}.tar.gz
 URL:		http://radcli.github.io/radcli/
+BuildRequires:	autoconf >= 2.50
+BuildRequires:	automake >= 1:1.11.3
 BuildRequires:	gnutls-devel >= 3.1.0
+BuildRequires:	libtool >= 2:2
 BuildRequires:	nettle-devel >= 2.4
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -80,6 +84,12 @@ Statyczna biblioteka radcli.
 %setup -q
 
 %build
+touch config.rpath
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	--enable-legacy-compat \
 	%{!?with_static_libs:--disable-static}
