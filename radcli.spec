@@ -5,14 +5,13 @@
 Summary:	Library for writing RADIUS clients
 Summary(pl.UTF-8):	Biblioteka do tworzenia klientów usługi RADIUS
 Name:		radcli
-Version:	1.2.6
+Version:	1.2.7
 Release:	1
 License:	BSD
 Group:		Libraries
 #Source0Download: https://github.com/radcli/radcli/releases
-Source0:	https://github.com/radcli/radcli/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	74ab74e3715bf0ddc2562c37c3218801
-#Source0:	https://github.com/radcli/radcli/releases/download/%{version}/%{name}-%{version}.tar.gz
+Source0:	https://github.com/radcli/radcli/releases/download/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	79c80174ceb31ce0698c760fd16f1216
 URL:		http://radcli.github.io/radcli/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11.3
