@@ -5,13 +5,13 @@
 Summary:	Library for writing RADIUS clients
 Summary(pl.UTF-8):	Biblioteka do tworzenia klientów usługi RADIUS
 Name:		radcli
-Version:	1.2.11
+Version:	1.3.0
 Release:	1
 License:	BSD
 Group:		Libraries
 #Source0Download: https://github.com/radcli/radcli/releases
 Source0:	https://github.com/radcli/radcli/releases/download/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	71451698a4e16adec3a9a44e9325aeda
+# Source0-md5:	385d9c801c808abdd59880f8a9de0d18
 URL:		http://radcli.github.io/radcli/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11.3
@@ -111,9 +111,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYRIGHT NEWS README.rst
+%doc AUTHORS COPYRIGHT NEWS README.md
 %attr(755,root,root) %{_libdir}/libradcli.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libradcli.so.4
+%attr(755,root,root) %ghost %{_libdir}/libradcli.so.5
 %dir %{_sysconfdir}/radcli
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/radcli/radiusclient.conf
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/radcli/radiusclient-tls.conf
